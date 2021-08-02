@@ -16,7 +16,7 @@ const apiUrl = 'https://movie-app-001.herokuapp.com/movies';
   providedIn: 'root'
 })
 
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // > provide HttpClient to the entire class + make it available via this.http
   constructor(private http: HttpClient) {
