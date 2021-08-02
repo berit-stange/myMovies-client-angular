@@ -24,9 +24,7 @@ export class UserLoginFormComponent implements OnInit {
     //@ = decorator that defines the component’s input
     //user Data object will be passed to the API call in the loginUser function
     Username: '',
-    Password: '',
-    Email: '',
-    Birthday: ''
+    Password: ''
   };
 
   constructor(
