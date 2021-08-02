@@ -1,11 +1,11 @@
-// src/app/user-registration-form/user-registration-form.component.ts
+// src/app/user-login-form/user-login-form.component.ts
 import { Component, OnInit, Input } from '@angular/core';
 
 // You'll use this import to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
 
 // This import brings in the API calls we created in 6.2
-import { UserRegistrationService } from '../fetch-api-data.service';
+import { UserLoginService } from '../fetch-api-data.service';
 
 // This import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,16 +13,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({ //@ = decorator to tell Angular that the class right below is a component
   //selector defines the custom HTML element, into which this component will render
-  selector: 'app-user-registration-form',
+  selector: 'app-user-login-form',
   //instructions for wiring up the class with its stylesheet and template file
-  templateUrl: './user-registration-form.component.html',
-  styleUrls: ['./user-registration-form.component.scss']
+  templateUrl: './user-login-form.component.html',
+  styleUrls: ['./user-login-form.component.scss']
 })
-export class UserRegistrationFormComponent implements OnInit {
+export class UserLoginFormComponent implements OnInit {
 
   @Input() userData = {
     //@ = decorator that defines the component’s input
-    //user Data object will be passed to the API call in the registerUser function
+    //user Data object will be passed to the API call in the loginUser function
     Username: '',
     Password: '',
     Email: '',
@@ -30,8 +30,8 @@ export class UserRegistrationFormComponent implements OnInit {
   };
 
   constructor(
-    public fetchApiData: UserRegistrationService,
-    public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
+    public fetchApiData: UserLoginService,
+    public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar
   ) { }
 
@@ -40,9 +40,9 @@ export class UserRegistrationFormComponent implements OnInit {
 
 
   // This is the function responsible for sending the form inputs to the backend
-  registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
-      // Logic for a successful user registration goes here! (To be implemented)
+  loginUser(): void {
+    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+      // Logic for a successful user login goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
       console.log(result);
       this.snackBar.open(result, 'OK', {
