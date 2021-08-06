@@ -17,6 +17,7 @@
         </div>
     </div>
 
+
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
         <mat-card *ngFor="let movie of movies; " style="flex: 1 1;">
             <mat-card-header>
@@ -32,7 +33,7 @@
                 <button mat-button color="primary">
                     Director
                 </button>
-                <button mat-button color="primary">
+                <button mat-button color="primary" (click)="openMovieViewDialog(movie.Description)">
                     Details
                 </button>
                 <mat-icon>favorite_border</mat-icon>
