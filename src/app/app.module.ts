@@ -30,6 +30,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserUpdateFormComponent } from './user-update-form/user-update-form.component';
 import { MovieViewComponent } from './movie-view/movie-view.component';
+import { GenreViewComponent } from './genre-view/genre-view.component';
+import { DirectorViewComponent } from './director-view/director-view.component';
 
 //defining a welcome route that'll point to components
 const appRoutes: Routes = [
@@ -49,7 +51,9 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     UserProfileComponent,
     UserUpdateFormComponent,
-    MovieViewComponent
+    MovieViewComponent,
+    GenreViewComponent,
+    DirectorViewComponent
   ],
   imports: [
     BrowserModule,

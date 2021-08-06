@@ -1,5 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-button { background-color: #e66771 !important;}
+html, body { 
+    height: 100%; 
+    background-color: #000d25;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+// button { 
+//     background-color: #cca53b !important;
+// }
+
+.logo {
+    color: #cca53b;
+    font-family: 'Abril Fatface', serif;
+    font-size: 60px;
+    margin: 10px;
+}
+
+//  style="display: flex; justify-content: space-between; "
+.nav-container {
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav-button {
+    // background-color: #000d25 !important;
+    // border: 1px solid #cca53b !important;
+    // color: #cca53b !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px !important;
+    // padding: 10px;
+}
+
+.mat-button-wrapper {
+    background-color: #000d25 !important;
+    border: 1px solid #cca53b !important;
+    color: #cca53b !important;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+}

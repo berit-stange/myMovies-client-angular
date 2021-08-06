@@ -1,0 +1,33 @@
+
+.movie-list {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.mat-card {
+    background-color: #000d25;
+    color: #cca53b;
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+}
+
+.mat-card-subtitle {
+    color: #cca53b;
+}
+
+button { 
+    // background-color: #cca53b !important;
+    border-radius: 0%;
+    color: #000d25 !important;
+    font-size: 14px;
+    margin: 20px;
+    padding: 0px 10px 0px 10px !important;
+}
+
+img {
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+}

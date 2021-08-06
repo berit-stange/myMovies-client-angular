@@ -4,16 +4,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
-  selector: 'app-movie-view',
-  templateUrl: './movie-view.component.html',
-  styleUrls: ['./movie-view.component.scss']
+  selector: 'app-director-view',
+  templateUrl: './director-view.component.html',
+  styleUrls: ['./director-view.component.scss']
 })
-export class MovieViewComponent implements OnInit {
+export class DirectorViewComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      details: string;
+      name: string;
+      bio: string;
     }
   ) { }
 
