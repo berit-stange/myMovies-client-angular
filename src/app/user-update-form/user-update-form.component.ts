@@ -9,15 +9,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 // used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
-@Component({ //@ = decorator to tell Angular that the class right below is a component
-  //selector defines the custom HTML element, into which this component will render
-  selector: 'app-user-registration-form',
-  //instructions for wiring up the class with its stylesheet and template file
-  templateUrl: './user-registration-form.component.html',
-  styleUrls: ['./user-registration-form.component.scss']
+@Component({
+  selector: 'app-user-update-form',
+  templateUrl: './user-update-form.component.html',
+  styleUrls: ['./user-update-form.component.scss']
 })
-export class UserRegistrationFormComponent implements OnInit {
+export class UserUpdateFormComponent implements OnInit {
 
   @Input() userData = {
     //@ = decorator that defines the component’s input
@@ -30,7 +27,7 @@ export class UserRegistrationFormComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
+    public dialogRef: MatDialogRef<UserUpdateFormComponent>,
     public snackBar: MatSnackBar
   ) { }
 
@@ -39,14 +36,17 @@ export class UserRegistrationFormComponent implements OnInit {
 
 
   // This is the function responsible for sending the form inputs to the backend
-  registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
-      // Logic for a successful user registration goes here! (To be implemented)
+  updateUser(): void {
+    this.fetchApiData.updateUser(this.userData).subscribe((result) => {
+      // Logic for a successful user login goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
+      localStorage.setItem('user', result.user.Username);
+      // localStorage.setItem('token', result.token);
       console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
+      // this.router.navigate(['movies']);
     }, (result) => {
       console.log(result);
       this.snackBar.open(result, 'OK', {
@@ -54,4 +54,6 @@ export class UserRegistrationFormComponent implements OnInit {
       });
     });
   }
+
+
 }

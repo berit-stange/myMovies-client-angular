@@ -1,0 +1,46 @@
+<div style="margin: 0 auto;">
+
+    <div style="display: flex; justify-content: space-between; background-color: #e66771;">
+        <button mat-button class="" routerLink='/movies' style="padding: 10px;" color='primary'>
+            LOGO
+        </button>
+
+        <div style=" justify-self: flex-end;">
+            <button mat-button class="" routerLink='/profile' style="padding: 10px;" color='primary'>
+                Profile
+            </button>
+
+            <button mat-button class="" routerLink='/movies' style="padding: 10px;" color='primary'>
+                All Movies
+            </button>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 50px;">
+
+
+        <div style="padding: 20px; text-align: center;">
+            <h1>{{user.Username}}'s Profile</h1>
+        </div>
+
+
+        <div style="padding: 20px;">
+            <button mat-raised-button (click)="openUserUpdateDialog()" style="margin: 10px;" color="primary">
+                UPDATE PROFILE
+            </button>
+        </div>
+
+
+        <div style="padding: 20px; text-align: center;">
+            <h2>{{user.Username}}'s Favorite Movies</h2>
+            <!-- <mat-card class="" *ngFor='let favorite of FavoriteMovies'> -->
+            <mat-card-header class="">
+                <mat-card-title class="">(movie cards here)</mat-card-title>
+                <!-- <mat-card-title class="">{{favorite.Title}}</mat-card-title> -->
+            </mat-card-header>
+            <!-- </mat-card> -->
+        </div>
+
+    </div>
+
+</div>
