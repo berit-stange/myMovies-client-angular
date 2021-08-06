@@ -55,5 +55,4 @@ export class UserUpdateFormComponent implements OnInit {
     });
   }
 
-
 }
