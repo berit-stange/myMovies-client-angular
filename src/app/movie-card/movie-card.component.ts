@@ -60,15 +60,6 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  isFavoured(movieID: string): boolean {
-    return this.favoriteMovieIds.includes(movieID);
-  };
 
-  favedMovies(): void {
-    const user = localStorage.getItem('user');
-    this.fetchApiData.getUser(user).subscribe((resp: any) => {
-      this.favoriteMovieIds = resp.movieFav;
-    });
-  }
 
 }
