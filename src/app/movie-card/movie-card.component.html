@@ -1,18 +1,17 @@
 <div>
-    <!-- use ngFor directive to display all movies -->
-    <!-- 'movies' refers to the variable declared in the component file -->
-    <div class="nav-container">
 
-        <div mat-button class="logo" routerLink="/movies">
+    <div class="nav-container">
+        <div class="logo" routerLink="/movies">
             myMovies
         </div>
 
-        <div style=" justify-self: flex-end;">
-            <button mat-button class="nav-button" routerLink='/profile'>
+        <div>
+            <!--  mat-button  -->
+            <button class="nav-button" routerLink='/profile'>
                 Profile
             </button>
-
-            <button mat-button class="nav-button" routerLink='/movies'>
+            <!--  mat-button -->
+            <button class="nav-button" routerLink='/movies'>
                 All Movies
             </button>
         </div>
@@ -20,6 +19,8 @@
 
 
     <div class="movie-list">
+        <!-- use ngFor directive to display all movies -->
+        <!-- 'movies' refers to the variable declared in the component file -->
         <mat-card *ngFor="let movie of movies; ">
 
             <mat-card-subtitle>
@@ -29,27 +30,25 @@
 
             <mat-card-header>
                 <mat-card-title>{{movie.Title}}</mat-card-title>
+                <mat-icon>favorite_border</mat-icon>
             </mat-card-header>
 
 
             <mat-card-actions class="button-container">
-
-                <button mat-button color="primary"
-                    (click)="openGenreViewDialog(movie.Genre.Name, movie.Genre.Description)">
+                <!--  mat-button color="primary" -->
+                <button (click)="openGenreViewDialog(movie.Genre.Name, movie.Genre.Description)">
                     Genre
                 </button>
-
-                <button mat-button color="primary"
-                    (click)="openDirectorViewDialog(movie.Director.Name, movie.Director.Bio)">
+                <!--  mat-button color="primary" -->
+                <button (click)="openDirectorViewDialog(movie.Director.Name, movie.Director.Bio)">
                     Director
                 </button>
-
-                <button mat-button color="primary" (click)="openMovieViewDialog(movie.Description)">
+                <!--  mat-button color="primary" -->
+                <button (click)="openMovieViewDialog(movie.Description)">
                     Details
                 </button>
 
-                <mat-icon>favorite_border</mat-icon>
-
+                <!-- <mat-icon>favorite_border</mat-icon> -->
             </mat-card-actions>
         </mat-card>
     </div>

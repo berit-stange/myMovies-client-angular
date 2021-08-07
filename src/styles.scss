@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+}
 
 html, body { 
     height: 100%; 
@@ -7,12 +10,14 @@ html, body {
 
 body { 
     margin: 0; 
-    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Montserrat', sans-serif;
 }
-
-// button { 
-//     background-color: #cca53b !important;
-// }
+.mat-body, .mat-body-1, .mat-typography {
+    // font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    font: 400 14px/20px Montserrat, "Montserrat", sans-serif;
+    // font-family: 'Montserrat', sans-serif;
+    letter-spacing: normal;
+}
 
 .logo {
     color: #cca53b;
@@ -21,9 +26,9 @@ body {
     margin: 10px;
 }
 
-//  style="display: flex; justify-content: space-between; "
 .nav-container {
     display: flex; 
+    // font-family: 'Montserrat', sans-serif;
     justify-content: space-between;
     padding: 20px;
 }
@@ -34,13 +39,44 @@ body {
     // color: #cca53b !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px !important;
-    // padding: 10px;
+    justify-self: flex-end;
+    margin: 5px; /* greift, wenn mat-button entfernt wird */
+    padding: 10px;
 }
 
-.mat-button-wrapper {
+// .mat-button-wrapper {
+//     background-color: #000d25 !important;
+//     border: 1px solid #cca53b !important;
+//     color: #cca53b !important;
+//     font-family: 'Montserrat', sans-serif;
+//     padding: 5px;
+// }
+
+
+.mat-button, 
+.mat-button-wrapper, 
+.mat-icon-button, 
+.mat-stroked-button, 
+.mat-flat-button {
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px !important; /* greift nicht ohne important*/
+}
+
+button,
+.mat-flat-button.mat-primary, 
+.mat-raised-button.mat-primary, 
+.mat-fab.mat-primary, 
+.mat-mini-fab.mat-primary {
     background-color: #000d25 !important;
     border: 1px solid #cca53b !important;
+    border-radius: 0%;
     color: #cca53b !important;
-    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif; /* greift nur auf 'button' mit important, alles andere greift */
     padding: 5px;
+}
+
+.main-page h1 {
+    color: #cca53b;
+    font-family: 'Montserrat', sans-serif;
 }

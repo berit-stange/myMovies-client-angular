@@ -11,17 +11,13 @@
     margin: 20px;
 }
 
-.mat-card-subtitle {
-    color: #cca53b;
+mat-card-header {
+    display: flex;
+    justify-content: space-between;
 }
 
-button { 
-    // background-color: #cca53b !important;
-    border-radius: 0%;
-    color: #000d25 !important;
-    font-size: 14px;
-    margin: 20px;
-    padding: 0px 10px 0px 10px !important;
+mat-card-title {
+    text-align: left;
 }
 
 img {
@@ -30,4 +26,5 @@ img {
 
 .button-container {
     display: flex;
+    justify-content:space-evenly;
 }
