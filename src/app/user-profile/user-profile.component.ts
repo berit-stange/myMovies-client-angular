@@ -33,6 +33,7 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any = [];
   FavoriteMovies: any = {};
+  favorites: any = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -50,7 +51,7 @@ export class UserProfileComponent implements OnInit {
     // const FavoriteMovies = localStorage.getItem('FavoriteMovies');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
       this.user = res;
-      // this.getMovies();
+      this.getMovies();
     });
   }
 
@@ -64,9 +65,21 @@ export class UserProfileComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
-      // this.filterFavorites();
+      this.filterFavorites();
     });
   }
+
+
+  filterFavorites(): void {
+    this.movies.forEach((movie: any) => {
+      if (this.user.FavoriteMovies.includes(movie._id)) {
+        this.favorites.push(movie);
+      }
+    });
+    return this.favorites;
+  }
+
+
 
   getFavoriteMovies(): void {
     // const user = localStorage.getItem('user');

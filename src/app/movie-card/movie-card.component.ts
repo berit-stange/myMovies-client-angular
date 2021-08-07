@@ -54,9 +54,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   //open movie details
-  openDirectorViewDialog(name: string, bio: string): void {
+  openDirectorViewDialog(name: string, bio: string, image: string): void {
     this.dialog.open(DirectorViewComponent, {
-      data: { name, bio },
+      data: { name, bio, image },
     });
   }
 

@@ -1,8 +1,11 @@
 <mat-card>
 
-    <mat-card-header>
+    <mat-card-header class="mat-dialog-title">
         <mat-card-title>{{ genre.name }}</mat-card-title>
-        <mat-dialog-content class="syn-content">{{ genre.description }}</mat-dialog-content>
     </mat-card-header>
+
+    <div class="dialog-text">
+        <mat-dialog-content>{{ genre.description }}</mat-dialog-content>
+    </div>
 
 </mat-card>

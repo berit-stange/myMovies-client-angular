@@ -1,46 +1,66 @@
-<div style="margin: 0 auto;">
+<div class="profile">
 
-    <div style="display: flex; justify-content: space-between; background-color: #e66771;">
-        <button mat-button class="" routerLink='/movies' style="padding: 10px;" color='primary'>
-            LOGO
-        </button>
+    <div class="nav-container">
+        <div class="logo" routerLink="/movies">
+            myMovies
+        </div>
 
-        <div style=" justify-self: flex-end;">
-            <button mat-button class="" routerLink='/profile' style="padding: 10px;" color='primary'>
+        <div>
+            <!--  mat-button  -->
+            <button class="nav-button" routerLink='/profile'>
                 Profile
             </button>
-
-            <button mat-button class="" routerLink='/movies' style="padding: 10px;" color='primary'>
+            <!--  mat-button -->
+            <button class="nav-button" routerLink='/movies'>
                 All Movies
             </button>
         </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; align-items: center; padding: 50px;">
 
+    <div style="padding: 20px; text-align: center;">
+        <h1>{{user.Username}}'s Profile</h1>
 
-        <div style="padding: 20px; text-align: center;">
-            <h1>{{user.Username}}'s Profile</h1>
-        </div>
-
-
-        <div style="padding: 20px;">
-            <button mat-raised-button (click)="openUserUpdateDialog()" style="margin: 10px;" color="primary">
-                UPDATE PROFILE
-            </button>
-        </div>
-
-
-        <div style="padding: 20px; text-align: center;">
-            <h2>{{user.Username}}'s Favorite Movies</h2>
-            <!-- <mat-card class="" *ngFor='let favorite of FavoriteMovies'> -->
-            <mat-card-header class="">
-                <mat-card-title class="">(movie cards here)</mat-card-title>
-                <!-- <mat-card-title class="">{{favorite.Title}}</mat-card-title> -->
-            </mat-card-header>
-            <!-- </mat-card> -->
-        </div>
-
+        <button mat-raised-button (click)="openUserUpdateDialog()" style="margin: 10px;" color="primary">
+            UPDATE PROFILE
+        </button>
     </div>
+
+
+
+    <div style="padding: 20px; text-align: center;">
+        <h2>{{user.Username}}'s User Data:</h2>
+
+        <div style="padding: 20px; text-align: left;">
+            <p>Username: {{user.Username}}</p>
+            <p>Email: {{user.Email}}</p>
+            <p>Birthday: {{user.Birthday}}</p>
+        </div>
+    </div>
+
+    <div class="favorite-container">
+
+        <h2>{{user.Username}}'s Favorite Movies</h2>
+        <div class="favorite-list">
+
+            <mat-card *ngFor='let favorite of favorites'>
+                <mat-card-subtitle>
+                    <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+                </mat-card-subtitle>
+
+                <!-- <mat-card-header class="">
+                        <mat-card-title class=""><span class="">{{favorite.Title}}</span>
+                        </mat-card-title>
+                    </mat-card-header> -->
+                <!-- <img src={{favorite.ImagePath}} alt={{favorite.Title}} /> -->
+                <mat-card-actions class="">
+                    <!-- <button mat-button class="warning" color='warn' (click)='removeFavorites(favorite._id, favorite.Title)'>
+                    Remove Favorite
+                </button> -->
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
 
 </div>

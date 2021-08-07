@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+/* add global styles to this file, and also import other style files */
+
 * {
     margin: 0;
 }
@@ -10,12 +11,14 @@ html, body {
 
 body { 
     margin: 0; 
-    // font-family: 'Montserrat', sans-serif;
 }
+
+.mat-typography {
+    color:red;
+}
+
 .mat-body, .mat-body-1, .mat-typography {
-    // font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
-    font: 400 14px/20px Montserrat, "Montserrat", sans-serif;
-    // font-family: 'Montserrat', sans-serif;
+    // font: 400 14px/20px Montserrat, "Montserrat", sans-serif;  /* greift in profile view, aber nicht in den movie cards  */
     letter-spacing: normal;
 }
 
@@ -28,30 +31,17 @@ body {
 
 .nav-container {
     display: flex; 
-    // font-family: 'Montserrat', sans-serif;
     justify-content: space-between;
     padding: 20px;
 }
 
 .nav-button {
-    // background-color: #000d25 !important;
-    // border: 1px solid #cca53b !important;
-    // color: #cca53b !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px !important;
     justify-self: flex-end;
     margin: 5px; /* greift, wenn mat-button entfernt wird */
     padding: 10px;
 }
-
-// .mat-button-wrapper {
-//     background-color: #000d25 !important;
-//     border: 1px solid #cca53b !important;
-//     color: #cca53b !important;
-//     font-family: 'Montserrat', sans-serif;
-//     padding: 5px;
-// }
-
 
 .mat-button, 
 .mat-button-wrapper, 
@@ -76,7 +66,50 @@ button,
     padding: 5px;
 }
 
-.main-page h1 {
+// .main-page h1 {
+    // color: #cca53b;
+    // font-family: 'Montserrat', sans-serif;
+// }
+
+// h1, 
+// h2, 
+.mat-card {
+    font-family: 'Montserrat', sans-serif ;
+    font-size: 16px; /* greift nicht >>> auch für dialog! */
+}
+
+.mat-card {
+    background-color: #000d25;
     color: #cca53b;
     font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+}
+
+.mat-card-header {
+    font-family: 'Montserrat', sans-serif ;
+    font-size: 10px !important; /* greift nicht >>> auch für dialog! */
+}
+
+.mat-dialog-container {
+    background-color: #000d25;
+    border: 3px dotted #cca53b;
+}
+
+// .dialog {
+//     display: flex;
+//     justify-content: center;
+// }
+
+.mat-dialog-content {
+    display: flex;
+    justify-content:space-evenly;
+    font-weight:100;
+}
+
+.mat-dialog-title {
+    text-align: center;
+}
+
+.dialog-text {
+    max-width: 300px;
 }

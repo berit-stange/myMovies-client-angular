@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class DirectorViewComponent implements OnInit {
     public data: {
       name: string;
       bio: string;
+      image: string;
     }
   ) { }
 

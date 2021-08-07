@@ -1,8 +1,12 @@
 <mat-card>
 
-    <mat-card-header>
+    <mat-card-header class="mat-dialog-title">
         <mat-card-title>{{ data.name }}</mat-card-title>
-        <mat-dialog-content class="syn-content">{{ data.bio }}</mat-dialog-content>
     </mat-card-header>
+
+    <div class="dialog-content">
+        <mat-dialog-content class="dialog-text">{{ data.bio }}</mat-dialog-content>
+        <img src={{data.image}} alt={{data.name}} />
+    </div>
 
 </mat-card>
