@@ -1,24 +1,79 @@
 /* add global styles to this file, and also import other style files */
 
-* {
-    margin: 0;
-}
+$accent-color: #cca53b;
+$light-color: gainsboro;
+$dark-color: #000d25;
+$error-color: #d67c53;
+$font-sans: 'Montserrat', sans-serif;
+$font-serif: 'Abril Fatface', serif;
+$font-big: 60px;
+$font-medium: 30px;
+$font-small: 20px;
+$font-p: 15px;
+$font-tiny: 12px;
+$font-heavy: 700;
+$font-light: 400;
+
 
 html, body { 
     height: 100%; 
     background-color: #000d25;
 }
 
-body { 
-    margin: 0; 
-}
+// body { 
+//     margin: 0 auto; 
+// }
+
+body {
+    font-family: $font-sans;
+    font-weight: $font-light;
+    font-size: $font-small;
+    line-height: 1.6;
+    background-color: $dark-color;
+    color: $light-color;
+  }
+  
+//   h1 {
+//     font-family: $font-serif;
+//     font-size:  $font-big !important;
+//   }
+    
+//   h2 {
+//     font-family: $font-serif;
+//     font-size: $font-medium !important;
+//   }
+    
+//   h3 {
+//     font-family: $font-sans;
+//     font-size:  $font-small !important; 
+//     color: $primary-color;
+//   }
+  
+//   h4 {
+//       font-family: $font-sans;
+//       font-size:  $font-small !important; 
+//       color: $primary-color;
+//   }
+  
+//   h5 {
+//       font-family: $font-sans;
+//       font-size:  $font-small !important; 
+//       color: $primary-color;
+//   }
+    
+//   p {
+//     font-family: $font-sans;
+//     font-size:  $font-p !important; 
+//   }
+  
 
 .mat-typography {
-    color:red;
+    color: #cca53b;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mat-body, .mat-body-1, .mat-typography {
-    // font: 400 14px/20px Montserrat, "Montserrat", sans-serif;  /* greift in profile view, aber nicht in den movie cards  */
+    font: 400 14px/20px Montserrat, "Montserrat", sans-serif;  /* greift in profile view, aber nicht in den movie cards  */
     letter-spacing: normal;
 }
 
@@ -66,10 +121,10 @@ button,
     padding: 5px;
 }
 
-// .main-page h1 {
-    // color: #cca53b;
-    // font-family: 'Montserrat', sans-serif;
-// }
+.main-page h1 {
+    color: #cca53b;
+    font-family: 'Montserrat', sans-serif;
+}
 
 // h1, 
 // h2, 

@@ -30,7 +30,8 @@
 
             <mat-card-header>
                 <mat-card-title>{{movie.Title}}</mat-card-title>
-                <mat-icon>favorite_border</mat-icon>
+                <!-- <mat-icon>favorite_border</mat-icon> -->
+                <mat-icon (click)="addToFavorites(movie._id)" class="fav-icon">favorite_border</mat-icon>
             </mat-card-header>
 
 

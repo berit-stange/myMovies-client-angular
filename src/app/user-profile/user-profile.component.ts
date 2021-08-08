@@ -66,6 +66,7 @@ export class UserProfileComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
       this.filterFavorites();
+      // this.getFavoriteMovies();
     });
   }
 
@@ -85,19 +86,28 @@ export class UserProfileComponent implements OnInit {
     // const user = localStorage.getItem('user');
     const FavoriteMovies = localStorage.getItem('FavoriteMovies');
     this.fetchApiData.getUser(FavoriteMovies).subscribe((res: any) => {
-      this.FavoriteMovies = res;
-      // this.getMovies();
+      // this.FavoriteMovies = res;
+      this.favorites = res;
+      this.getMovies();
     });
   }
 
-  // filterFavorites(): void {
-  //   this.movies.forEach((movie: any) => {
-  //     if (this.user.FavoriteMovies.includes(movie._id)) {
-  //       this.favorites.push(movie);
-  //     }
-  //   });
-  //   return this.favorites;
-  // }
+
+
+  deleteFavorite(movieId: string): any {
+    const FavoriteMovies = localStorage.getItem('FavoriteMovies');
+    this.fetchApiData.addFavorite(movieId).subscribe((response: any) => {
+      this.snackBar.open('Added to favorites!', 'OK', {
+        duration: 2000,
+      });
+      console.log(this.FavoriteMovies);
+    });
+    return this.FavoriteMovies.push(movieId);
+  }
+
+
+
+
 
 }
 

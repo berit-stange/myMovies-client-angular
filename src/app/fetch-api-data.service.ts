@@ -122,7 +122,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
       );
     }
-    return throwError('Error editing user info, please contact the developer.');
+    return throwError('Error updating user info');
   }
 
 
@@ -150,7 +150,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
       );
     }
-    return throwError('Error deleting profile, please contact the developer.');
+    return throwError('Error deleting profile');
   }
 
 
@@ -205,7 +205,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
       );
     }
-    return throwError('Error retieving movie synopsis, please contact the developer.');
+    return throwError('Error retieving movie details');
   }
 
 
@@ -213,7 +213,7 @@ export class FetchApiDataService {
   addFavorite(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    return this.http.post(apiUrl + `users/${user}/favorites/${id}`, {
+    return this.http.post(apiUrl + `users/${user}/favorites/${id}`, id, {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -287,7 +287,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
       );
     }
-    return throwError('Error retieving director info, please contact the developer.');
+    return throwError('Error retieving director view');
   }
 
 
@@ -314,7 +314,7 @@ export class FetchApiDataService {
         `Error Status code ${error.status}, ` + `Error body is: ${error.error}`
       );
     }
-    return throwError('Error retieving genre info, please contact the developer.');
+    return throwError('Error retieving genre view');
   }
 
 

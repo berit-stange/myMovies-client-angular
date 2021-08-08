@@ -34,7 +34,7 @@
         <div style="padding: 20px; text-align: left;">
             <p>Username: {{user.Username}}</p>
             <p>Email: {{user.Email}}</p>
-            <p>Birthday: {{user.Birthday}}</p>
+            <!-- <p>Birthday: {{user.Birthday}}</p> -->
         </div>
     </div>
 
@@ -53,13 +53,15 @@
                         </mat-card-title>
                     </mat-card-header> -->
                 <!-- <img src={{favorite.ImagePath}} alt={{favorite.Title}} /> -->
-                <mat-card-actions class="">
-                    <!-- <button mat-button class="warning" color='warn' (click)='removeFavorites(favorite._id, favorite.Title)'>
-                    Remove Favorite
-                </button> -->
+                <mat-card-actions class="remove">
+                    <!-- <button mat-button class="" color='warn' (click)='removeFavorites(favorite._id, favorite.Title)'> -->
+                    <button class="material-icons round">
+                        <span>remove</span>
+                    </button>
                 </mat-card-actions>
             </mat-card>
         </div>
+
     </div>
 
 
