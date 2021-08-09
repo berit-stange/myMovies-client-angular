@@ -167,10 +167,6 @@ margin-bottom: 0px !important;
     box-shadow: none;
 }
 
-// .dialog-details {
-//     background-color: $dark-color !important;
-// }
-
 input,
 .update,
 .register {
@@ -180,13 +176,12 @@ input,
 }
 
 .custom-form-field {
-    padding: 10px 0px 10px 0px;   
+  padding: 10px 0px 10px 0px;   
   border: 1px solid $dark-color;
   width: 100%;
 }
 
-.custom-form-field:focus-visible {
-    // padding: 10px 0px 10px 0px;  
+.custom-form-field:focus-visible { 
     border: 1px solid $dark-color;
     outline: 2px solid $dark-color;
   }
@@ -194,6 +189,5 @@ input,
 .mat-form-field,
 .mat-form-field:focus-visible {
     font-family: $font-sans;
-    // background-color: $accent-color !important;  /* macht keinen Unterschied */
     outline: none;
   }
