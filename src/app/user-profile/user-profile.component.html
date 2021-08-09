@@ -1,22 +1,6 @@
+<app-navigation></app-navigation>
+
 <div class="profile">
-
-    <div class="nav-container">
-        <div class="logo" routerLink="/movies">
-            myMovies
-        </div>
-
-        <div>
-            <!--  mat-button  -->
-            <button class="nav-button" routerLink='/profile'>
-                Profile
-            </button>
-            <!--  mat-button -->
-            <button class="nav-button" routerLink='/movies'>
-                All Movies
-            </button>
-        </div>
-    </div>
-
 
     <div style="padding: 20px; text-align: center;">
         <h1>{{user.Username}}'s Profile</h1>
@@ -25,8 +9,6 @@
             UPDATE PROFILE
         </button>
     </div>
-
-
 
     <div style="padding: 20px; text-align: center;">
         <h2>{{user.Username}}'s User Data:</h2>
@@ -43,26 +25,29 @@
         <h2>{{user.Username}}'s Favorite Movies</h2>
         <div class="favorite-list">
 
-            <mat-card *ngFor='let favorite of favorites'>
+            <mat-card *ngFor='let favorite of favorites' class="movie-card">
                 <mat-card-subtitle>
                     <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
                 </mat-card-subtitle>
 
-                <!-- <mat-card-header class="">
-                        <mat-card-title class=""><span class="">{{favorite.Title}}</span>
-                        </mat-card-title>
-                    </mat-card-header> -->
-                <!-- <img src={{favorite.ImagePath}} alt={{favorite.Title}} /> -->
                 <mat-card-actions class="remove">
-                    <!-- <button mat-button class="" color='warn' (click)='removeFavorites(favorite._id, favorite.Title)'> -->
-                    <button class="material-icons round">
+                    <button class="material-icons round" (click)='deleteFavorite(favorite._id)'>
                         <span>remove</span>
                     </button>
                 </mat-card-actions>
+
             </mat-card>
         </div>
 
     </div>
+
+    <div style="padding: 20px; text-align: center;">
+        <h2>DELETE {{user.Username}}'s Profile</h2>
+        <button mat-raised-button (click)="deleteUserAccount()" style="margin: 10px;" color="primary">
+            DELETE PROFILE
+        </button>
+    </div>
+
 
 
 </div>

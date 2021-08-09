@@ -1,8 +1,10 @@
 /* add global styles to this file, and also import other style files */
 
-$accent-color: #cca53b;
+// $accent-color: #cca53b;
+$accent-color: #c0a457;
 $light-color: gainsboro;
-$dark-color: #000d25;
+// $dark-color: #000d25;
+$dark-color: #010918;
 $error-color: #d67c53;
 $font-sans: 'Montserrat', sans-serif;
 $font-serif: 'Abril Fatface', serif;
@@ -17,59 +19,24 @@ $font-light: 400;
 
 html, body { 
     height: 100%; 
-    background-color: #000d25;
+    background-color: $dark-color;
 }
 
-// body { 
-//     margin: 0 auto; 
-// }
-
 body {
+    background-color: $dark-color;
+    color: $light-color;
     font-family: $font-sans;
     font-weight: $font-light;
     font-size: $font-small;
     line-height: 1.6;
-    background-color: $dark-color;
-    color: $light-color;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 80%;
   }
-  
-//   h1 {
-//     font-family: $font-serif;
-//     font-size:  $font-big !important;
-//   }
-    
-//   h2 {
-//     font-family: $font-serif;
-//     font-size: $font-medium !important;
-//   }
-    
-//   h3 {
-//     font-family: $font-sans;
-//     font-size:  $font-small !important; 
-//     color: $primary-color;
-//   }
-  
-//   h4 {
-//       font-family: $font-sans;
-//       font-size:  $font-small !important; 
-//       color: $primary-color;
-//   }
-  
-//   h5 {
-//       font-family: $font-sans;
-//       font-size:  $font-small !important; 
-//       color: $primary-color;
-//   }
-    
-//   p {
-//     font-family: $font-sans;
-//     font-size:  $font-p !important; 
-//   }
-  
 
 .mat-typography {
-    color: #cca53b;
-    font-family: 'Montserrat', sans-serif;
+    color: $accent-color;
+    font-family: $font-sans;
 }
 
 .mat-body, .mat-body-1, .mat-typography {
@@ -78,8 +45,8 @@ body {
 }
 
 .logo {
-    color: #cca53b;
-    font-family: 'Abril Fatface', serif;
+    color: $accent-color;
+    font-family: $font-serif;
     font-size: 60px;
     margin: 10px;
 }
@@ -91,7 +58,7 @@ body {
 }
 
 .nav-button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-sans;
     font-size: 16px !important;
     justify-self: flex-end;
     margin: 5px; /* greift, wenn mat-button entfernt wird */
@@ -103,7 +70,7 @@ body {
 .mat-icon-button, 
 .mat-stroked-button, 
 .mat-flat-button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-sans;
     margin: 5px !important; /* greift nicht ohne important*/
 }
 
@@ -112,59 +79,121 @@ button,
 .mat-raised-button.mat-primary, 
 .mat-fab.mat-primary, 
 .mat-mini-fab.mat-primary {
-    background-color: #000d25 !important;
-    border: 1px solid #cca53b !important;
+    background-color: $dark-color !important;
+    border: 1px solid $accent-color !important;
     border-radius: 0%;
-    color: #cca53b !important;
+    color: $accent-color !important;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif; /* greift nur auf 'button' mit important, alles andere greift */
+    font-family: $font-sans; /* greift nur auf 'button' mit important, alles andere greift */
     padding: 5px;
 }
 
 .main-page h1 {
-    color: #cca53b;
-    font-family: 'Montserrat', sans-serif;
-}
-
-// h1, 
-// h2, 
-.mat-card {
-    font-family: 'Montserrat', sans-serif ;
-    font-size: 16px; /* greift nicht >>> auch für dialog! */
+    color: $accent-color;
+    font-family: $font-sans;
 }
 
 .mat-card {
-    background-color: #000d25;
-    color: #cca53b;
-    font-family: 'Montserrat', sans-serif;
+    background-color: $accent-color; /* hier gibt es Diskrepanzen zwischen den Formularen und den Detail-Dialogs */
+    box-shadow: none !important;
+    color: $accent-color;
+    font-family: $font-sans;
     margin: 20px;
+    padding: 0px !important;
 }
 
 .mat-card-header {
-    font-family: 'Montserrat', sans-serif ;
+    font-family: $font-sans;
     font-size: 10px !important; /* greift nicht >>> auch für dialog! */
 }
 
-.mat-dialog-container {
-    background-color: #000d25;
-    border: 3px dotted #cca53b;
+.movie-card {
+    background-color: $dark-color;
 }
 
-// .dialog {
-//     display: flex;
-//     justify-content: center;
-// }
+.genre-details,
+.director-details,
+.story-details
+{
+    color: $dark-color;
+    padding: 30px;
+}
+
+.mat-dialog-container,
+ form {
+    background-color: $accent-color; 
+    border-radius: 0px !important;
+}
 
 .mat-dialog-content {
     display: flex;
     justify-content:space-evenly;
-    font-weight:100;
 }
 
-.mat-dialog-title {
-    text-align: center;
+.mat-dialog-title,
+.mat-card-title,
+.mat-card-header-text {
+    margin: 10px auto !important;
+    text-align: center !important;
+}
+
+.mat-card-actions, 
+.mat-card-subtitle, 
+.mat-card-content 
+{
+margin-bottom: 0px !important;
 }
 
 .dialog-text {
     max-width: 300px;
 }
+
+.mat-form-field-label-wrapper {
+    color: $accent-color !important;
+}
+
+.mat-card-actions {
+    text-align: center;
+    display: flex;
+    align-content:space-around;
+}
+
+.update-button {
+    // background-color: $accent-color !important;
+    font-size: $font-p;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+// .dialog-details {
+//     background-color: $dark-color !important;
+// }
+
+input,
+.update,
+.register {
+    background-color: $accent-color !important;
+    color: $dark-color;
+    text-align: center;
+}
+
+.custom-form-field {
+    padding: 10px 0px 10px 0px;   
+  border: 1px solid $dark-color;
+  width: 100%;
+}
+
+.custom-form-field:focus-visible {
+    // padding: 10px 0px 10px 0px;  
+    border: 1px solid $dark-color;
+    outline: 2px solid $dark-color;
+  }
+
+.mat-form-field,
+.mat-form-field:focus-visible {
+    font-family: $font-sans;
+    // background-color: $accent-color !important;  /* macht keinen Unterschied */
+    outline: none;
+  }

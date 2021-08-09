@@ -40,19 +40,20 @@ export class UserUpdateFormComponent implements OnInit {
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
       // Logic for a successful user login goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal on success!
-      localStorage.setItem('user', result.user.Username);
-      // localStorage.setItem('token', result.token);
+      localStorage.setItem('user', result.Username);
       console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
-      // this.router.navigate(['movies']);
     }, (result) => {
       console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       });
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000);
   }
 
 }

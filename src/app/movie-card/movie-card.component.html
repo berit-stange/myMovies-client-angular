@@ -1,27 +1,11 @@
+<app-navigation></app-navigation>
+
 <div>
-
-    <div class="nav-container">
-        <div class="logo" routerLink="/movies">
-            myMovies
-        </div>
-
-        <div>
-            <!--  mat-button  -->
-            <button class="nav-button" routerLink='/profile'>
-                Profile
-            </button>
-            <!--  mat-button -->
-            <button class="nav-button" routerLink='/movies'>
-                All Movies
-            </button>
-        </div>
-    </div>
-
 
     <div class="movie-list">
         <!-- use ngFor directive to display all movies -->
         <!-- 'movies' refers to the variable declared in the component file -->
-        <mat-card *ngFor="let movie of movies; ">
+        <mat-card *ngFor="let movie of movies;" class="movie-card">
 
             <mat-card-subtitle>
                 <img src={{movie.ImagePath}} alt={{movie.Title}} />
@@ -37,17 +21,17 @@
 
             <mat-card-actions class="button-container">
                 <!--  mat-button color="primary" -->
-                <button (click)="openGenreViewDialog(movie.Genre.Name, movie.Genre.Description)">
+                <button class="movie-button" (click)="openGenreViewDialog(movie.Genre.Name, movie.Genre.Description)">
                     Genre
                 </button>
                 <!--  mat-button color="primary" -->
-                <button
+                <button class="movie-button"
                     (click)="openDirectorViewDialog(movie.Director.Name, movie.Director.Bio, movie.Director.ImagePath)">
                     Director
                 </button>
                 <!--  mat-button color="primary" -->
-                <button (click)="openMovieViewDialog(movie.Description)">
-                    Details
+                <button class="movie-button" (click)="openMovieViewDialog(movie.Description)">
+                    Story
                 </button>
 
                 <!-- <mat-icon>favorite_border</mat-icon> -->
